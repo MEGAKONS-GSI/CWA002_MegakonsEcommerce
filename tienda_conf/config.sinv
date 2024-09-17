@@ -1,0 +1,5 @@
+imprimirconsola=>S
+empresa_defecto=>MGK
+host_url=>https://megakons.com
+env=>TEST
+no_buscar=>EL,LA,LOS,LAS,DE,DEL,CON, ,+,-

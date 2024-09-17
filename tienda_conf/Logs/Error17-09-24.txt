@@ -1,0 +1,462 @@
+-----------Exception Details on  17/9/2024 10:20:57-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:20:57
+
+Error Line No : ínea 13
+
+Error Message: InvalidOperationException
+
+Error Details:    en System.Data.OracleClient.OCI.DetermineClientVersion()
+   en System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   en System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   en System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.OracleClient.OracleConnection.Open()
+   en Ecommerce.DataAccess.UsuarioDAL.CadenaConexion() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\UsuarioDAL.cs:línea 132
+
+Exception Type: System.InvalidOperationException
+
+Error Location : El intento de cargar las bibliotecas de clientes de Oracle lanzó BadImageFormatException. Este problema ocurrirá al ejecutar el modo 64 bits con los componente cliente de Oracle de 32 bits instalados.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 10:20:57-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:20:57
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 10:20:57-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:20:57
+
+Error Line No : línea 3
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.Proforma..ctor(Cliente cli) en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\VenProforma.cs:línea 37
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 10:31:03-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:31:03
+
+Error Line No : ínea 13
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.Formularios.ListaProductos.ObtenerFiltroConsulta() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\Formularios\Tienda\ListaProductos.aspx.cs:línea 136
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/productos
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 10:31:03-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:31:03
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/productos
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 10:31:05-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:31:05
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 10:36:02-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:36:02
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/404?404;http://192.168.1.49:84/assets/js/bootstrap.js.map
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 10:36:03-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 10:36:03
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/404?404;http://192.168.1.49:84/assets/js/popper.min.js.map
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:46-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:46
+
+Error Line No : ínea 13
+
+Error Message: Exception
+
+Error Details:    en System.Data.OracleClient.OCI.DetermineClientVersion()
+   en System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   en System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   en System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.OracleClient.OracleConnection.Open()
+   en Ecommerce.DataAccess.UsuarioDAL.CadenaConexion() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\UsuarioDAL.cs:línea 132
+
+Exception Type: System.Exception
+
+Error Location : System.Data.OracleClient requiere la version 8.1.7 o posterior del software cliente de Oracle.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:46-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:46
+
+Error Line No : ínea 13
+
+Error Message: Exception
+
+Error Details:    en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.OracleClient.OracleConnection.Open()
+   en Ecommerce.DataAccess.UsuarioDAL.CadenaConexion() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\UsuarioDAL.cs:línea 132
+
+Exception Type: System.Exception
+
+Error Location : System.Data.OracleClient requiere la version 8.1.7 o posterior del software cliente de Oracle.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:46-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:46
+
+Error Line No : ínea 13
+
+Error Message: Exception
+
+Error Details:    en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.OracleClient.OracleConnection.Open()
+   en Ecommerce.DataAccess.UsuarioDAL.CadenaConexion() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\UsuarioDAL.cs:línea 132
+
+Exception Type: System.Exception
+
+Error Location : System.Data.OracleClient requiere la version 8.1.7 o posterior del software cliente de Oracle.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:46-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:46
+
+Error Line No : línea 3
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.Proforma..ctor(Cliente cli) en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\VenProforma.cs:línea 37
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:46-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:46
+
+Error Line No : línea 3
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.Proforma..ctor(Cliente cli) en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\VenProforma.cs:línea 37
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:46-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:46
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:47-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:47
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/404?404;http://192.168.1.49:84/assets/js/popper.min.js.map
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-----------Exception Details on  17/9/2024 12:25:48-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 17/9/2024 12:25:48
+
+Error Line No : ínea 24
+
+Error Message: NullReferenceException
+
+Error Details:    en Ecommerce.DataAccess.GlobalDAL.Marcas() en E:\00_DEV2019\Proyectos\Ecommerce\tienda_mgk\Ecommerce\DataAccess\GlobalDAL.cs:línea 241
+
+Exception Type: System.NullReferenceException
+
+Error Location : Referencia a objeto no establecida como instancia de un objeto.
+
+ Error Page Url: http://192.168.1.49:84/404?404;http://192.168.1.49:84/assets/js/bootstrap.js.map
+
+User Host IP: 192.168.1.49
+
+
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+

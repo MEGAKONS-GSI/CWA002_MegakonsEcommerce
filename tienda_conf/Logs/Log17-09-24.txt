@@ -1,0 +1,228 @@
+-------------------------------------------------------------------------------------
+----------- Details on  17/9/2024 10:31:03    sql articulos por uninego: -----------------
+-------------------------------------------------------------------------------------
+
+
+
+select clase,grupo,articulo, nombre, descripc, marca, modelo, accesweb, 
+                        uni,precio,impuesto,precioiva,existencia,costo,existencia_nac, kardex, existenc,
+                        (select nvl(pd.porcdesc,0) from ven_precdesc pd
+                        where pd.artl_compania=sys_context('SFC','CMPA')
+                        and pd.artl_clase=clase and pd.artl_codigrup=grupo
+                        and pd.artl_articulo=articulo and pd.lspr_lspr_id=  ) valordesc,
+                        imagen1, fechcrea, vchar3--imagen2, imagen3, imagen4, imagen5, 
+
+                  from (select aux.clase,aux.grupo,aux.articulo,aux.nombre, aux.descripc, aux.marca, aux.modelo, aux.accesweb, aux.uni,aux.precio,aux.impuesto, 
+                                PRECIO + (PRECIO*(impuesto/100)) precioiva,
+                                --existencia oficina
+                                NVL((select sum(t.existencia) 
+                                from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase and t.artl_codigrup=aux.grupo 
+                               -- and t.secc_oficina='' 
+                                and t.vigente='S'),0) existencia, 
+                                -- costo                               
+                                NVL((select sum(t.costo)  from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase and t.artl_codigrup=aux.grupo 
+                                --and t.secc_oficina='' 
+                                and t.vigente='S'),0) costo,
+                                -- existencia nacional      
+                                NVL((select sum(t.existencia) from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase 
+                                and t.artl_codigrup=aux.grupo and t.vigente='S'),0) existencia_nac,
+                                aux.kardex, aux.existenc, aux.imagen1,-- aux.imagen2, aux.imagen3, aux.imagen4, aux.imagen5, 
+                                aux.fechcrea, nvl(aux.vchar3,'N') vchar3
+                       from(select a.grar_clase clase, a.grar_codigrup grupo, gra.descripc grup_descripc, a.Articulo, a.aliasweb nombre, un.codigo coduninego, un.descripc un_descripc,
+                                a.descripc, a.marca, a.modelo, a.accesweb, a.umed_unidmedi uni,a.kardex, a.existenc,
+                                -- precio
+                                (select pd.precvent from ven_precdesc pd
+                                where pd.artl_clase =  a.GRAR_CLASE and pd.artl_codigrup = a.GRAR_CODIGRUP and
+                                pd.artl_articulo = a.ARTICULO and pd.lspr_lspr_id = ) precio,
+                                nvl((select im.tasa from alm_impuesto im
+                                where im.artl_articulo = a.ARTICULO and im.artl_clase = a.GRAR_CLASE and im.artl_codigrup = a.GRAR_CODIGRUP and im.vigente = 'S') ,0) impuesto,
+                                null imagen1, a.fechcrea, nvl(a.vchar3, 'A') vchar3
+                            from alm_articulos a,  ALM_GRUPARTI gra, alm_unidarti ua, alm_unidnego un
+                            where gra.cinv_compania = a.grar_compania
+                            and   gra.cinv_clase = a.grar_clase
+                            and   gra.codigrup = a.grar_codigrup
+                            and   ua.artl_clase = a.grar_clase
+                            and   ua.artl_codigrup = a.grar_codigrup
+                            and   ua.artl_articulo = a.articulo
+                            and   ua.unne_codigo = un.codigo
+                            and a.accesweb = 'S' 
+                            and a.VIGENTE = 'S' 
+                            and exists (select * from ven_precdesc pd where pd.artl_compania = a.grar_compania and
+                                        pd.artl_clase = a.grar_clase and pd.artl_codigrup = a.grar_codigrup and
+                                        pd.artl_articulo = a.articulo and pd.lspr_lspr_id = )
+                            order by a.vchar3 asc
+                        ) aux
+   	                    where (upper(aux.coduninego) like '%'
+                        or upper(aux.un_descripc) like ''
+                        )
+                        and aux.precio between 0 and 99999999
+                        order by case 
+                        when upper(aux.nombre) LIKE '%%' then 1 
+                        end asc
+                    )aux2
+                    where rownum <= (select nvl(max(pt.valor), 100) from gen_parametro pt where pt.tipopara = 'ROWNUMMAX')
+                    and aux2.existencia > 0 
+order by case 
+when upper(nombre) LIKE '%%' then 1 
+end asc,
+aux2.existencia desc
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------
+----------- Details on  17/9/2024 10:31:03    sql articulos por uninego: -----------------
+-------------------------------------------------------------------------------------
+
+
+
+select clase,grupo,articulo, nombre, descripc, marca, modelo, accesweb, 
+                        uni,precio,impuesto,precioiva,existencia,costo,existencia_nac, kardex, existenc,
+                        (select nvl(pd.porcdesc,0) from ven_precdesc pd
+                        where pd.artl_compania=sys_context('SFC','CMPA')
+                        and pd.artl_clase=clase and pd.artl_codigrup=grupo
+                        and pd.artl_articulo=articulo and pd.lspr_lspr_id=  ) valordesc,
+                        imagen1, fechcrea, vchar3--imagen2, imagen3, imagen4, imagen5, 
+
+                  from (select aux.clase,aux.grupo,aux.articulo,aux.nombre, aux.descripc, aux.marca, aux.modelo, aux.accesweb, aux.uni,aux.precio,aux.impuesto, 
+                                PRECIO + (PRECIO*(impuesto/100)) precioiva,
+                                --existencia oficina
+                                NVL((select sum(t.existencia) 
+                                from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase and t.artl_codigrup=aux.grupo 
+                               -- and t.secc_oficina='' 
+                                and t.vigente='S'),0) existencia, 
+                                -- costo                               
+                                NVL((select sum(t.costo)  from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase and t.artl_codigrup=aux.grupo 
+                                --and t.secc_oficina='' 
+                                and t.vigente='S'),0) costo,
+                                -- existencia nacional      
+                                NVL((select sum(t.existencia) from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase 
+                                and t.artl_codigrup=aux.grupo and t.vigente='S'),0) existencia_nac,
+                                aux.kardex, aux.existenc, aux.imagen1,-- aux.imagen2, aux.imagen3, aux.imagen4, aux.imagen5, 
+                                aux.fechcrea, nvl(aux.vchar3,'N') vchar3
+                       from(select a.grar_clase clase, a.grar_codigrup grupo, gra.descripc grup_descripc, a.Articulo, a.aliasweb nombre, un.codigo coduninego, un.descripc un_descripc,
+                                a.descripc, a.marca, a.modelo, a.accesweb, a.umed_unidmedi uni,a.kardex, a.existenc,
+                                -- precio
+                                (select pd.precvent from ven_precdesc pd
+                                where pd.artl_clase =  a.GRAR_CLASE and pd.artl_codigrup = a.GRAR_CODIGRUP and
+                                pd.artl_articulo = a.ARTICULO and pd.lspr_lspr_id = ) precio,
+                                nvl((select im.tasa from alm_impuesto im
+                                where im.artl_articulo = a.ARTICULO and im.artl_clase = a.GRAR_CLASE and im.artl_codigrup = a.GRAR_CODIGRUP and im.vigente = 'S') ,0) impuesto,
+                                null imagen1, a.fechcrea, nvl(a.vchar3, 'A') vchar3
+                            from alm_articulos a,  ALM_GRUPARTI gra, alm_unidarti ua, alm_unidnego un
+                            where gra.cinv_compania = a.grar_compania
+                            and   gra.cinv_clase = a.grar_clase
+                            and   gra.codigrup = a.grar_codigrup
+                            and   ua.artl_clase = a.grar_clase
+                            and   ua.artl_codigrup = a.grar_codigrup
+                            and   ua.artl_articulo = a.articulo
+                            and   ua.unne_codigo = un.codigo
+                            and a.accesweb = 'S' 
+                            and a.VIGENTE = 'S' 
+                            and exists (select * from ven_precdesc pd where pd.artl_compania = a.grar_compania and
+                                        pd.artl_clase = a.grar_clase and pd.artl_codigrup = a.grar_codigrup and
+                                        pd.artl_articulo = a.articulo and pd.lspr_lspr_id = )
+                            order by a.vchar3 asc
+                        ) aux
+   	                    where (upper(aux.coduninego) like '%'
+                        or upper(aux.un_descripc) like ''
+                        )
+                        and aux.precio between 1 and 999999999
+                        order by case 
+                        when upper(aux.nombre) LIKE '%%' then 1 
+                        end asc
+                    )aux2
+                    where rownum <= (select nvl(max(pt.valor), 100) from gen_parametro pt where pt.tipopara = 'ROWNUMMAX')
+                    and aux2.existencia > 0 
+order by case 
+when upper(nombre) LIKE '%%' then 1 
+end asc,
+aux2.existencia desc
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------
+----------- Details on  17/9/2024 10:31:03    sql articulos por uninego: -----------------
+-------------------------------------------------------------------------------------
+
+
+
+select clase,grupo,articulo, nombre, descripc, marca, modelo, accesweb, 
+                        uni,precio,impuesto,precioiva,existencia,costo,existencia_nac, kardex, existenc,
+                        (select nvl(pd.porcdesc,0) from ven_precdesc pd
+                        where pd.artl_compania=sys_context('SFC','CMPA')
+                        and pd.artl_clase=clase and pd.artl_codigrup=grupo
+                        and pd.artl_articulo=articulo and pd.lspr_lspr_id=  ) valordesc,
+                        imagen1, fechcrea, vchar3--imagen2, imagen3, imagen4, imagen5, 
+
+                  from (select aux.clase,aux.grupo,aux.articulo,aux.nombre, aux.descripc, aux.marca, aux.modelo, aux.accesweb, aux.uni,aux.precio,aux.impuesto, 
+                                PRECIO + (PRECIO*(impuesto/100)) precioiva,
+                                --existencia oficina
+                                NVL((select sum(t.existencia) 
+                                from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase and t.artl_codigrup=aux.grupo 
+                               -- and t.secc_oficina='' 
+                                and t.vigente='S'),0) existencia, 
+                                -- costo                               
+                                NVL((select sum(t.costo)  from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase and t.artl_codigrup=aux.grupo 
+                                --and t.secc_oficina='' 
+                                and t.vigente='S'),0) costo,
+                                -- existencia nacional      
+                                NVL((select sum(t.existencia) from alm_ubicacion t
+                                where t.artl_articulo=aux.articulo and t.artl_clase=aux.clase 
+                                and t.artl_codigrup=aux.grupo and t.vigente='S'),0) existencia_nac,
+                                aux.kardex, aux.existenc, aux.imagen1,-- aux.imagen2, aux.imagen3, aux.imagen4, aux.imagen5, 
+                                aux.fechcrea, nvl(aux.vchar3,'N') vchar3
+                       from(select a.grar_clase clase, a.grar_codigrup grupo, gra.descripc grup_descripc, a.Articulo, a.aliasweb nombre, un.codigo coduninego, un.descripc un_descripc,
+                                a.descripc, a.marca, a.modelo, a.accesweb, a.umed_unidmedi uni,a.kardex, a.existenc,
+                                -- precio
+                                (select pd.precvent from ven_precdesc pd
+                                where pd.artl_clase =  a.GRAR_CLASE and pd.artl_codigrup = a.GRAR_CODIGRUP and
+                                pd.artl_articulo = a.ARTICULO and pd.lspr_lspr_id = ) precio,
+                                nvl((select im.tasa from alm_impuesto im
+                                where im.artl_articulo = a.ARTICULO and im.artl_clase = a.GRAR_CLASE and im.artl_codigrup = a.GRAR_CODIGRUP and im.vigente = 'S') ,0) impuesto,
+                                null imagen1, a.fechcrea, nvl(a.vchar3, 'A') vchar3
+                            from alm_articulos a,  ALM_GRUPARTI gra, alm_unidarti ua, alm_unidnego un
+                            where gra.cinv_compania = a.grar_compania
+                            and   gra.cinv_clase = a.grar_clase
+                            and   gra.codigrup = a.grar_codigrup
+                            and   ua.artl_clase = a.grar_clase
+                            and   ua.artl_codigrup = a.grar_codigrup
+                            and   ua.artl_articulo = a.articulo
+                            and   ua.unne_codigo = un.codigo
+                            and a.accesweb = 'S' 
+                            and a.VIGENTE = 'S' 
+                            and exists (select * from ven_precdesc pd where pd.artl_compania = a.grar_compania and
+                                        pd.artl_clase = a.grar_clase and pd.artl_codigrup = a.grar_codigrup and
+                                        pd.artl_articulo = a.articulo and pd.lspr_lspr_id = )
+                            order by a.vchar3 asc
+                        ) aux
+   	                    where (upper(aux.coduninego) like '%'
+                        or upper(aux.un_descripc) like ''
+                        )
+                        and aux.precio between 1 and 999999999
+                        order by case 
+                        when upper(aux.nombre) LIKE '%%' then 1 
+                        end asc
+                    )aux2
+                    where rownum <= (select nvl(max(pt.valor), 100) from gen_parametro pt where pt.tipopara = 'ROWNUMMAX')
+                    and aux2.existencia > 0 
+order by case 
+when upper(nombre) LIKE '%%' then 1 
+end asc,
+aux2.existencia desc
+--------------------------------*End*------------------------------------------
+-------------------------------------------------------------------------------------
+
+
+
